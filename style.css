@@ -1,0 +1,345 @@
+/* --- Global Theme & Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* Container to align all 3 Mockup Screens side-by-side */
+.app-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* --- Phone Canvas Simulation --- */
+.phone-screen {
+    width: 320px;
+    height: 600px;
+    background: #ffffff;
+    border: 10px solid #1a1a1a;
+    border-radius: 32px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* --- Shared Status Header Bar --- */
+.status-bar {
+    height: 24px;
+    background: #f7f7f7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    font-size: 11px;
+    color: #666;
+}
+.status-bar .right-icons {
+    display: flex;
+    gap: 6px;
+}
+
+/* --- Navigation Header --- */
+.nav-header {
+    height: 44px;
+    border-bottom: 1px solid #efefef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 14px;
+    font-size: 15px;
+    color: #262626;
+}
+.feed-right-icons, .nav-icons {
+    position: relative;
+    font-size: 18px;
+}
+.notification-dot {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 6px;
+    height: 6px;
+    background-color: #ed4956;
+    border-radius: 50%;
+}
+
+/* Wireframe Skeleton Lines */
+.line {
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 6px;
+}
+.short-line { width: 90px; }
+.extra-short-line { width: 50px; }
+.micro-line { width: 45px; margin-bottom: 0; }
+
+/* Gradient Configuration Matching the Reference Image Precisely */
+.grid-post, .main-post-content, .explore-item, .story-inside, .profile-pic, .filled-circle {
+    background: linear-gradient(180deg, #ffd3b6 0%, #ff8b94 40%, #ffaaa6 70%, #b39ddb 100%) !important;
+}
+
+/* --- SCREEN 1 SPECIFIC: PROFILE --- */
+.profile-info {
+    display: flex;
+    padding: 14px;
+    align-items: center;
+    gap: 20px;
+}
+.profile-pic-container {
+    position: relative;
+}
+.profile-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px #dbdbdb;
+}
+.add-story-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #0095f6;
+    color: #fff;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    font-size: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #fff;
+    font-weight: bold;
+}
+.stats-container {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    text-align: center;
+}
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+}
+.stat-item strong { font-size: 14px; color: #262626; }
+.stat-item span { color: #8e8e8e; font-size: 11px; }
+
+.profile-bio {
+    padding: 0 14px 12px 14px;
+}
+
+/* Highlights Row (Flexbox) */
+.highlights-container {
+    display: flex;
+    gap: 12px;
+    padding: 0 14px 14px 14px;
+    border-bottom: 1px solid #efefef;
+}
+.highlight-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.empty-circle { border: 1px solid #dbdbdb; color: #a8a8a8; font-size: 18px; background: none; }
+
+/* Navigation Tab Switching Bar */
+.tabs-bar {
+    display: flex;
+    height: 40px;
+    border-bottom: 1px solid #efefef;
+}
+.tab {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #8e8e8e;
+    font-size: 16px;
+}
+.tab.active { color: #000; border-bottom: 2px solid #000; }
+
+/* Profile Grid (CSS Grid Tool Implementation) */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    padding: 3px 0;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+.grid-post {
+    aspect-ratio: 1 / 1;
+}
+
+/* --- SCREEN 2 SPECIFIC: HOME FEED --- */
+.stories-bar {
+    display: flex;
+    gap: 10px;
+    padding: 10px 14px;
+    border-bottom: 1px solid #efefef;
+}
+.story-ring {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 2px;
+    border: 2px solid #dbdbdb;
+}
+.story-ring.active-ring { border-color: #f77737; }
+.story-inside { width: 100%; height: 100%; border-radius: 50%; }
+
+.feed-post-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.post-header {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    gap: 10px;
+}
+.post-user-pic {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+}
+.post-user-pic.micro { width: 14px; height: 14px; }
+.post-user-info { flex-grow: 1; }
+.main-post-content {
+    width: 100%;
+    height: 200px;
+}
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 12px;
+    font-size: 16px;
+}
+.left-actions { display: flex; gap: 12px; }
+.post-caption-area { padding: 0 12px; }
+.caption-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+
+/* --- SCREEN 3 SPECIFIC: EXPLORE & SEARCH --- */
+.search-container {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    gap: 12px;
+}
+.search-box {
+    flex-grow: 1;
+    background-color: #efefef;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 8px;
+    color: #8e8e8e;
+}
+.scan-icon { font-size: 16px; color: #262626; }
+.category-tabs { display: flex; gap: 6px; padding: 0 12px 10px 12px; }
+.pill-tab {
+    height: 24px;
+    min-width: 40px;
+    border: 1px solid #dbdbdb;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #262626;
+    font-size: 12px;
+    padding: 0 8px;
+}
+
+/* Complex Asymmetric Dashboard (CSS Grid Advanced Pattern) */
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 85px;
+    gap: 3px;
+    padding: 0 12px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+.explore-item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.item-vertical-tall {
+    grid-column: 2 / 4;
+    grid-row: 1 / 3;
+}
+.explore-item::after {
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    width: 4px;
+    height: 4px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 50%;
+}
+
+/* --- Bottom Toolbar Navigation --- */
+.bottom-nav {
+    height: 44px;
+    border-top: 1px solid #efefef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 16px;
+    color: #262626;
+    background: #fff;
+    margin-top: auto;
+}
+.nav-heart-wrapper { position: relative; }
+.heart-popup {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ed4956;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 10px;
+    display: flex;
+    gap: 4px;
+    font-size: 9px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.heart-popup::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 4px 4px 0;
+    border-style: solid;
+    border-color: #ed4956 transparent;
+}
